@@ -22,6 +22,7 @@ end
 
   get '/account' do
     if Helpers.is_logged_in?(session)
+      @user = Helpers.current_user(session)
       erb :account
     else
       erb :error
